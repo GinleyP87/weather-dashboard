@@ -1,0 +1,10 @@
+header  {
+    background: purple;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 10px;
+    color: lightgrey;
+    border-bottom: solid 4px black
+}
+
