@@ -12,6 +12,96 @@
     <header>
         5 Day Weather Dashboard
     </header>
+
+    <div class="container">
+        <div class="row">
+        <!-- left column -->
+            <div class="col-4 justify-content-left">
+                <p> Input a city and get the weather forecast.</p>
+                <form>
+                    <div class="form-block">
+                        <label>Enter City</label>
+                            <input type="text" class="form-control" id="cityInput" placeholder="Enter City">
+                        <button class="city-button" type="button" id="search-btn">
+                        Generate
+                        </button>
+                    </div>
+                </form>
+                <button class="clear-button" id="clearBtn" onclick="searchHistoryClear()">
+                    Clear Searches
+                </button>
+                <div id="searches"></div>
+             </div>   
+        
+
+        <!-- right column -->
+            <div class="col-8">
+            <!-- forecast for the day -->
+                <div class="row">
+                    <div id="weather" class="weather-row">
+                    
+                        <div id="city"></div>
+                        <div id="date"></div>
+                        <div id="weatherIcon"></div>
+                        <div id="temp"></div>
+                        <div id="humidity"></div>
+                        <div id="windSpeed"></div>
+                        <div id="uvIndex"></div>
+                        <div id="lat"></div>
+                        <div id="lon"></div>
+                    </div>
+                </div>
+        
+
+            <!-- 5 day forecast -->
+            
+                <div id="forecast" class="forecast-row2">
+                    <div id="day1" class="weather-card">
+                        <div id="date1"></div>
+                        <div id="weatherIcon1"></div>
+                        <div id="temp1"></div>
+                        <div id="humidity1"></div>
+                    </div>
+                    <br> <br>
+                    <div id="day2" class="weather-card">
+                        <div id="date2"></div>
+                        <div id="weatherIcon2"></div>
+                        <div id="temp2"></div>
+                        <div id="humidity2"></div>
+                    </div>
+                    <br> <br>
+                    <div id="day3" class="weather-card">
+                        <div id="date3"></div>
+                        <div id="weatherIcon3"></div>
+                        <div id="temp3"></div>
+                        <div id="humidity3"></div>
+                    </div>
+                    <br> <br>
+                    <div id="day4" class="weather-card">
+                        <div id="date4"></div>
+                        <div id="weatherIcon4"></div>
+                        <div id="temp4"></div>
+                        <div id="humidity4"></div>
+                    </div>
+                    <br> <br>
+                    <div id="day5" class="weather-card">
+                        <div id="date5"></div>
+                        <div id="weatherIcon5"></div>
+                        <div id="temp5"></div>
+                        <div id="humidity5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- DEBUGGING -->
+        <pre><code><div id="rawdataForecast"></div></code></pre>
+        <pre><code><div id="rawdataToday"></div></code></pre>
+        <pre><code><div id="rawdataTodayUV"></div></code></pre>
+
+
+    </div>
+        
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

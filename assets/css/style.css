@@ -7,4 +7,34 @@ header  {
     color: lightgrey;
     border-bottom: solid 4px black
 }
+body{
+    background: lightgrey
+}
+.form-group {
+    display: flex;
+}
+
+.forecast-row2 {
+    display: flex;
+    justify-content: space-evenly 
+    
+}
+
+.city-button {
+    height: 38px;
+    background: purple;
+    color: white;
+}
+
+.weather-row {
+    border: solid 3px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px;
+}
+.weather-card {
+    background: purple;
+    color: whitesmoke;
+    border: solid 3px violet;
+    margin: 20px 0px 0px 0px;
+}
 
