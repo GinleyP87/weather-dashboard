@@ -5,8 +5,48 @@ async function formatPage(cityID) {
     var key = '40d8b8389636b89f162bb5d11734a1f1';
 
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-    if (cityID == null || cityID == '') cityID = "Cleveland";
+    if (cityID == null || cityID == '') {
+        //cityID = "Cleveland";
+       document.getElementById("weather").style.display = "none";
+       document.getElementById("day1").style.display = "none";
+       document.getElementById("day2").style.display = "none";
+       document.getElementById("day3").style.display = "none";
+       document.getElementById("day4").style.display = "none";
+       document.getElementById("day5").style.display = "none";
+    } 
     else {
+        document.getElementById("weather").style.display = "block";
+        document.getElementById("day1").style.display = "block";
+        document.getElementById("day2").style.display = "block";
+        document.getElementById("day3").style.display = "block";
+        document.getElementById("day4").style.display = "block";
+        document.getElementById("day5").style.display = "block";  
+        var jsonToday = await getJsonData('https://api.openweathermap.org/data/2.5/weather?q=' + cityID + '&appid=' + key);
+
+        //document.getElementById('rawdataToday').innerHTML = JSON.stringify(jsonToday, null, 4);
+
+        var lat = jsonToday.coord.lat;
+
+        var lon = jsonToday.coord.lon;
+
+        drawWeatherToday(jsonToday);
+
+
+
+        var jsonForecast = await getJsonData('https://api.openweathermap.org/data/2.5/forecast?q=' + cityID + '&appid=' + key);
+
+        //document.getElementById('rawdataForecast').innerHTML = JSON.stringify(jsonForecast, null, 4);
+
+        drawWeatherForecast(jsonForecast);
+
+
+
+        var jsonForecastUV = await getJsonData("https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&cnt=1");
+
+        //document.getElementById('rawdataForecastUV').innerHTML = JSON.stringify(jsonForecastUV, null, 4);
+
+        drawWeatherTodayUV(jsonForecastUV);
+
         searchHistorySave(cityID);
     }
 
@@ -16,32 +56,6 @@ async function formatPage(cityID) {
     //var cityID = "Cleveland";
 
 
-
-    var jsonToday = await getJsonData('https://api.openweathermap.org/data/2.5/weather?q=' + cityID + '&appid=' + key);
-
-    document.getElementById('rawdataToday').innerHTML = JSON.stringify(jsonToday, null, 4);
-
-    var lat = jsonToday.coord.lat;
-
-    var lon = jsonToday.coord.lon;
-
-    drawWeatherToday(jsonToday);
-
-
-
-    var jsonForecast = await getJsonData('https://api.openweathermap.org/data/2.5/forecast?q=' + cityID + '&appid=' + key);
-
-    document.getElementById('rawdataForecast').innerHTML = JSON.stringify(jsonForecast, null, 4);
-
-    drawWeatherForecast(jsonForecast);
-
-
-
-    var jsonForecastUV = await getJsonData("https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&cnt=1");
-
-    document.getElementById('rawdataForecastUV').innerHTML = JSON.stringify(jsonForecastUV, null, 4);
-
-    drawWeatherTodayUV(jsonForecastUV);
 
 }
 
@@ -215,7 +229,7 @@ function searchHistoryClear() {
     var searchHistoryJSON = [];
     var seachHistoryJSONString = JSON.stringify(searchHistoryJSON);
     localStorage.setItem("searchHistory",seachHistoryJSONString);
-
+    formatPage(null);
 }
 
 
@@ -238,8 +252,9 @@ function searchHistoryDisplayButton(cityName) {
    return html;
 } 
 
-function search(cityName) {
-    
+function searchBtn() {
+    var city = document.getElementById('cityInput').value;
+    formatPage(city);
 }
 
 onload = function() {
@@ -247,13 +262,6 @@ onload = function() {
 }
 
 
-
-window.onclick = function () {
-    var city = document.getElementById('cityInput').value;
-    
-    formatPage(city);
-
-}
 
 
 
