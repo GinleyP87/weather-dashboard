@@ -24,6 +24,7 @@ body{
     height: 38px;
     background: purple;
     color: white;
+    margin: 10px 0px 0px 0px
 }
 
 .weather-row {
@@ -36,5 +37,12 @@ body{
     color: whitesmoke;
     border: solid 3px violet;
     margin: 20px 0px 0px 0px;
+}
+
+.clear-button {
+    margin: 10px 0px 0px 0px;
+    border: double 4px violet;
+    color: purple;
+        
 }
 
