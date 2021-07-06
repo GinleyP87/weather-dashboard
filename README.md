@@ -8,4 +8,5 @@
 
 ## Data persists after a reload. Clears when clear button is pressed.
 
-### Will probably resubmit for a better grade at some point. couldn't get UV index to work. you're gonna find out anyway... might as well find out here. 
+### Will probably resubmit for a better grade at some point. couldn't get UV index to work. you're gonna find out anyway... might as well find out here.
+ 
