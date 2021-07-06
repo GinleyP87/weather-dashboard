@@ -114,7 +114,7 @@ function updateWeatherForecastFields(d, index, idsuffix) {
 
     document.getElementById("humidity" + idsuffix).innerHTML = "Humidity: " + humidity + " %";
 
-    document.getElementById("windSpeed").innerHTML = windspeed;
+    document.getElementById("windSpeed").innerHTML = "Wind Speed: " + windspeed;
 
     document.getElementById("weatherIcon" + idsuffix).innerHTML = "<img src=\"https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png\">";
 

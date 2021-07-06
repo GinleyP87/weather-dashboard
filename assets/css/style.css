@@ -16,7 +16,8 @@ body{
 
 .forecast-row {
     display: flex;
-    justify-content: space-evenly 
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     
 }
 
@@ -24,19 +25,23 @@ body{
     height: 38px;
     background: purple;
     color: white;
-    margin: 10px 0px 0px 0px
+    margin: 10px 0px 0px 0px;
+    width: 100%;
 }
 
 .weather-row {
     border: solid 3px;
     padding: 10px 10px 10px 10px;
     margin: 10px 0px 0px 0px;
+    width: 100%;
+    display: flex;
 }
 .weather-card {
     background: purple;
     color: whitesmoke;
     border: solid 3px violet;
     margin: 20px 0px 0px 0px;
+   
 }
 
 .clear-button {
@@ -51,3 +56,10 @@ body{
     font-weight: bold;
 }
 
+.row {
+    width: 100;
+}
+
+.search-row {
+    width: 100%;
+}
