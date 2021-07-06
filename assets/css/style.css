@@ -14,7 +14,7 @@ body{
     display: flex;
 }
 
-.forecast-row2 {
+.forecast-row {
     display: flex;
     justify-content: space-evenly 
     
@@ -46,4 +46,8 @@ body{
         
 }
 
+.city-label {
+    font-size: 20px;
+    font-weight: bold;
+}
 
